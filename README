@@ -1,0 +1,3 @@
+Feature encapsulating a basic product catalog based on D7 commerce.
+
+A product, product display, taxonomy, view for displaying catalog. Rule for auto creating the product display.

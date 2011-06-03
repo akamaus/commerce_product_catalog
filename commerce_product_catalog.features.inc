@@ -21,6 +21,16 @@ function commerce_product_catalog_commerce_product_default_types() {
 }
 
 /**
+ * Implementation of hook_views_api().
+ */
+function commerce_product_catalog_views_api() {
+  list($module, $api) = func_get_args();
+  if ($module == "views" && $api == "views_default") {
+    return array("version" => 3.0);
+  }
+}
+
+/**
  * Implementation of hook_node_info().
  */
 function commerce_product_catalog_node_info() {

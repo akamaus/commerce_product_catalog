@@ -11,28 +11,27 @@ function commerce_product_catalog_views_default_views() {
   $export = array();
 
   $view = new view;
-  $view->name = 'products_of_a_category';
+  $view->name = 'product_catalog';
   $view->description = 'A view to emulate Drupal core\'s handling of taxonomy/term; it also emulates Views 1\'s handling by having two possible feeds.';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'products_of_a_category';
+  $view->human_name = 'Product catalog';
   $view->core = 0;
   $view->api_version = '3.0-alpha1';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'YYY [vocabulary]';
+  $handler->display->display_options['title'] = 'Новые товары';
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = 0;
-  /* Relationship: Content: Referenced product */
+  /* Relationship: Fields: Referenced product */
   $handler->display->display_options['relationships']['field_commerce_ref_product_id']['id'] = 'field_commerce_ref_product_id';
   $handler->display->display_options['relationships']['field_commerce_ref_product_id']['table'] = 'field_data_field_commerce_ref';
   $handler->display->display_options['relationships']['field_commerce_ref_product_id']['field'] = 'field_commerce_ref_product_id';
@@ -47,11 +46,11 @@ function commerce_product_catalog_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['title']['alter']['external'] = 0;
   $handler->display->display_options['fields']['title']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['title']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = 1;
   $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['title']['alter']['html'] = 0;
   $handler->display->display_options['fields']['title']['element_label_colon'] = 0;
   $handler->display->display_options['fields']['title']['element_default_classes'] = 1;
@@ -69,11 +68,11 @@ function commerce_product_catalog_views_default_views() {
   $handler->display->display_options['fields']['field_product_picture']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['field_product_picture']['alter']['external'] = 0;
   $handler->display->display_options['fields']['field_product_picture']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_product_picture']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['field_product_picture']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['field_product_picture']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['field_product_picture']['alter']['ellipsis'] = 1;
   $handler->display->display_options['fields']['field_product_picture']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['field_product_picture']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['field_product_picture']['alter']['html'] = 0;
   $handler->display->display_options['fields']['field_product_picture']['element_label_colon'] = 0;
   $handler->display->display_options['fields']['field_product_picture']['element_default_classes'] = 1;
@@ -97,11 +96,11 @@ function commerce_product_catalog_views_default_views() {
   $handler->display->display_options['fields']['commerce_price']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['commerce_price']['alter']['external'] = 0;
   $handler->display->display_options['fields']['commerce_price']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['commerce_price']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['commerce_price']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['commerce_price']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['commerce_price']['alter']['ellipsis'] = 1;
   $handler->display->display_options['fields']['commerce_price']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['commerce_price']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['commerce_price']['alter']['html'] = 0;
   $handler->display->display_options['fields']['commerce_price']['element_label_colon'] = 0;
   $handler->display->display_options['fields']['commerce_price']['element_default_classes'] = 1;
@@ -125,11 +124,11 @@ function commerce_product_catalog_views_default_views() {
   $handler->display->display_options['fields']['title_1']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['title_1']['alter']['external'] = 0;
   $handler->display->display_options['fields']['title_1']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['title_1']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['title_1']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['title_1']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['title_1']['alter']['ellipsis'] = 1;
   $handler->display->display_options['fields']['title_1']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['title_1']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['title_1']['alter']['html'] = 0;
   $handler->display->display_options['fields']['title_1']['element_label_colon'] = 0;
   $handler->display->display_options['fields']['title_1']['element_default_classes'] = 1;
@@ -148,11 +147,11 @@ function commerce_product_catalog_views_default_views() {
   $handler->display->display_options['fields']['add_to_cart_form']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['add_to_cart_form']['alter']['external'] = 0;
   $handler->display->display_options['fields']['add_to_cart_form']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['add_to_cart_form']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['add_to_cart_form']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['add_to_cart_form']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['add_to_cart_form']['alter']['ellipsis'] = 1;
   $handler->display->display_options['fields']['add_to_cart_form']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['add_to_cart_form']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['add_to_cart_form']['alter']['html'] = 0;
   $handler->display->display_options['fields']['add_to_cart_form']['element_label_colon'] = 0;
   $handler->display->display_options['fields']['add_to_cart_form']['element_default_classes'] = 1;
@@ -171,11 +170,11 @@ function commerce_product_catalog_views_default_views() {
   $handler->display->display_options['fields']['nothing']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['external'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['nothing']['alter']['ellipsis'] = 1;
   $handler->display->display_options['fields']['nothing']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['nothing']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['html'] = 0;
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = 0;
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = 1;
@@ -186,12 +185,23 @@ function commerce_product_catalog_views_default_views() {
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
   $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Product: Каталог (field_catalog) */
+  /* Sort criterion: Commerce Product: Updated date */
+  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['table'] = 'commerce_product';
+  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['relationship'] = 'field_commerce_ref_product_id';
+  $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
+  /* Filter criterion: Content: Published or admin */
+  $handler->display->display_options['filters']['status_extra']['id'] = 'status_extra';
+  $handler->display->display_options['filters']['status_extra']['table'] = 'node';
+  $handler->display->display_options['filters']['status_extra']['field'] = 'status_extra';
+  $handler->display->display_options['filters']['status_extra']['group'] = 0;
+  $handler->display->display_options['filters']['status_extra']['expose']['operator'] = FALSE;
+
+  /* Display: Категория каталога */
+  $handler = $view->new_display('page', 'Категория каталога', 'page');
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Fields: Каталог (field_catalog) - tid */
   $handler->display->display_options['arguments']['field_catalog_tid']['id'] = 'field_catalog_tid';
   $handler->display->display_options['arguments']['field_catalog_tid']['table'] = 'field_data_field_catalog';
   $handler->display->display_options['arguments']['field_catalog_tid']['field'] = 'field_catalog_tid';
@@ -204,39 +214,22 @@ function commerce_product_catalog_views_default_views() {
   $handler->display->display_options['arguments']['field_catalog_tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['field_catalog_tid']['break_phrase'] = 0;
   $handler->display->display_options['arguments']['field_catalog_tid']['not'] = 0;
-  /* Filter criterion: Content: Published or admin */
-  $handler->display->display_options['filters']['status_extra']['id'] = 'status_extra';
-  $handler->display->display_options['filters']['status_extra']['table'] = 'node';
-  $handler->display->display_options['filters']['status_extra']['field'] = 'status_extra';
-  $handler->display->display_options['filters']['status_extra']['group'] = 0;
-  $handler->display->display_options['filters']['status_extra']['expose']['operator'] = FALSE;
-
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'taxonomy/term/%';
 
-  /* Display: Core feed */
-  $handler = $view->new_display('feed', 'Core feed', 'feed');
+  /* Display: Главная */
+  $handler = $view->new_display('page', 'Главная', 'page_1');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = 15;
-  $handler->display->display_options['style_plugin'] = 'rss';
-  $handler->display->display_options['row_plugin'] = 'node_rss';
-  $handler->display->display_options['path'] = 'taxonomy/term/%/%/feed';
-  $handler->display->display_options['displays'] = array(
-    'page' => 'page',
-    'default' => 0,
-  );
-
-  /* Display: Views 1 feed */
-  $handler = $view->new_display('feed', 'Views 1 feed', 'feed_1');
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = 15;
-  $handler->display->display_options['style_plugin'] = 'rss';
-  $handler->display->display_options['row_plugin'] = 'node_rss';
-  $handler->display->display_options['path'] = 'taxonomy/term/%/feed';
-  $translatables['products_of_a_category'] = array(
+  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = 0;
+  $handler->display->display_options['path'] = 'main';
+  $handler->display->display_options['menu']['title'] = 'zzz';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $translatables['product_catalog'] = array(
     t('Master'),
-    t('YYY [vocabulary]'),
+    t('Новые товары'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -249,12 +242,11 @@ function commerce_product_catalog_views_default_views() {
     t('Product'),
     t('Подробнее'),
     t('<div class="price">[commerce_price]</div> [title_1] [add_to_cart_form] '),
+    t('Категория каталога'),
     t('All'),
-    t('Page'),
-    t('Core feed'),
-    t('Views 1 feed'),
+    t('Главная'),
   );
-  $export['products_of_a_category'] = $view;
+  $export['product_catalog'] = $view;
 
   return $export;
 }

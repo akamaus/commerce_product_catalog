@@ -5,22 +5,6 @@
  */
 
 /**
- * Implementation of hook_commerce_product_default_types().
- */
-function commerce_product_catalog_commerce_product_default_types() {
-  $items = array(
-    'product' => array(
-      'type' => 'product',
-      'name' => 'Product',
-      'description' => 'A basic product type.',
-      'help' => '',
-      'module' => 'commerce_product_ui',
-    ),
-  );
-  return $items;
-}
-
-/**
  * Implementation of hook_views_api().
  */
 function commerce_product_catalog_views_api() {

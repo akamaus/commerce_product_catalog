@@ -5,7 +5,7 @@
  */
 
 /**
- * Implementation of hook_views_default_views().
+ * Implements hook_views_default_views().
  */
 function commerce_product_catalog_views_default_views() {
   $export = array();
@@ -26,12 +26,13 @@ function commerce_product_catalog_views_default_views() {
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = 0;
-  /* Relationship: Fields: Referenced product */
+  /* Relationship: Content: Referenced product */
   $handler->display->display_options['relationships']['field_commerce_ref_product_id']['id'] = 'field_commerce_ref_product_id';
   $handler->display->display_options['relationships']['field_commerce_ref_product_id']['table'] = 'field_data_field_commerce_ref';
   $handler->display->display_options['relationships']['field_commerce_ref_product_id']['field'] = 'field_commerce_ref_product_id';
@@ -46,18 +47,18 @@ function commerce_product_catalog_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['title']['alter']['external'] = 0;
   $handler->display->display_options['fields']['title']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['title']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = 1;
   $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['title']['alter']['html'] = 0;
   $handler->display->display_options['fields']['title']['element_label_colon'] = 0;
   $handler->display->display_options['fields']['title']['element_default_classes'] = 1;
   $handler->display->display_options['fields']['title']['hide_empty'] = 0;
   $handler->display->display_options['fields']['title']['empty_zero'] = 0;
   $handler->display->display_options['fields']['title']['link_to_node'] = 0;
-  /* Field: Product: Изображение */
+  /* Field: Commerce Product: Изображение */
   $handler->display->display_options['fields']['field_product_picture']['id'] = 'field_product_picture';
   $handler->display->display_options['fields']['field_product_picture']['table'] = 'field_data_field_product_picture';
   $handler->display->display_options['fields']['field_product_picture']['field'] = 'field_product_picture';
@@ -68,11 +69,11 @@ function commerce_product_catalog_views_default_views() {
   $handler->display->display_options['fields']['field_product_picture']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['field_product_picture']['alter']['external'] = 0;
   $handler->display->display_options['fields']['field_product_picture']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['field_product_picture']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['field_product_picture']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['field_product_picture']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['field_product_picture']['alter']['ellipsis'] = 1;
   $handler->display->display_options['fields']['field_product_picture']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_product_picture']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['field_product_picture']['alter']['html'] = 0;
   $handler->display->display_options['fields']['field_product_picture']['element_label_colon'] = 0;
   $handler->display->display_options['fields']['field_product_picture']['element_default_classes'] = 1;
@@ -84,7 +85,7 @@ function commerce_product_catalog_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_product_picture']['field_api_classes'] = 0;
-  /* Field: Product: Price */
+  /* Field: Commerce Product: Price */
   $handler->display->display_options['fields']['commerce_price']['id'] = 'commerce_price';
   $handler->display->display_options['fields']['commerce_price']['table'] = 'field_data_commerce_price';
   $handler->display->display_options['fields']['commerce_price']['field'] = 'commerce_price';
@@ -96,11 +97,11 @@ function commerce_product_catalog_views_default_views() {
   $handler->display->display_options['fields']['commerce_price']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['commerce_price']['alter']['external'] = 0;
   $handler->display->display_options['fields']['commerce_price']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['commerce_price']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['commerce_price']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['commerce_price']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['commerce_price']['alter']['ellipsis'] = 1;
   $handler->display->display_options['fields']['commerce_price']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['commerce_price']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['commerce_price']['alter']['html'] = 0;
   $handler->display->display_options['fields']['commerce_price']['element_label_colon'] = 0;
   $handler->display->display_options['fields']['commerce_price']['element_default_classes'] = 1;
@@ -124,11 +125,11 @@ function commerce_product_catalog_views_default_views() {
   $handler->display->display_options['fields']['title_1']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['title_1']['alter']['external'] = 0;
   $handler->display->display_options['fields']['title_1']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['title_1']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['title_1']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['title_1']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['title_1']['alter']['ellipsis'] = 1;
   $handler->display->display_options['fields']['title_1']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['title_1']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['title_1']['alter']['html'] = 0;
   $handler->display->display_options['fields']['title_1']['element_label_colon'] = 0;
   $handler->display->display_options['fields']['title_1']['element_default_classes'] = 1;
@@ -147,11 +148,11 @@ function commerce_product_catalog_views_default_views() {
   $handler->display->display_options['fields']['add_to_cart_form']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['add_to_cart_form']['alter']['external'] = 0;
   $handler->display->display_options['fields']['add_to_cart_form']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['add_to_cart_form']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['add_to_cart_form']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['add_to_cart_form']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['add_to_cart_form']['alter']['ellipsis'] = 1;
   $handler->display->display_options['fields']['add_to_cart_form']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['add_to_cart_form']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['add_to_cart_form']['alter']['html'] = 0;
   $handler->display->display_options['fields']['add_to_cart_form']['element_label_colon'] = 0;
   $handler->display->display_options['fields']['add_to_cart_form']['element_default_classes'] = 1;
@@ -170,11 +171,11 @@ function commerce_product_catalog_views_default_views() {
   $handler->display->display_options['fields']['nothing']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['external'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['nothing']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['nothing']['alter']['ellipsis'] = 1;
   $handler->display->display_options['fields']['nothing']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['html'] = 0;
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = 0;
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = 1;
@@ -201,7 +202,7 @@ function commerce_product_catalog_views_default_views() {
   /* Display: Категория каталога */
   $handler = $view->new_display('page', 'Категория каталога', 'page');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Fields: Каталог (field_catalog) - tid */
+  /* Contextual filter: Commerce Product: Каталог (field_catalog) */
   $handler->display->display_options['arguments']['field_catalog_tid']['id'] = 'field_catalog_tid';
   $handler->display->display_options['arguments']['field_catalog_tid']['table'] = 'field_data_field_catalog';
   $handler->display->display_options['arguments']['field_catalog_tid']['field'] = 'field_catalog_tid';

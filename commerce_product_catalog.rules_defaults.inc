@@ -5,14 +5,14 @@
  */
 
 /**
- * Implementation of hook_default_rules_configuration().
+ * Implements hook_default_rules_configuration().
  */
 function commerce_product_catalog_default_rules_configuration() {
   $items = array();
   $items['rules_auto_delete_product_display'] = entity_import('rules_config', '{ "rules_auto_delete_product_display" : {
       "LABEL" : "Auto delete product display",
       "PLUGIN" : "reaction rule",
-      "REQUIRES" : [ "commerce_product" ],
+      "REQUIRES" : [ "entity" ],
       "ON" : [ "commerce_product_delete" ],
       "DO" : []
     }
@@ -20,7 +20,7 @@ function commerce_product_catalog_default_rules_configuration() {
   $items['rules_create_a_product_display'] = entity_import('rules_config', '{ "rules_create_a_product_display" : {
       "LABEL" : "Create a product display",
       "PLUGIN" : "reaction rule",
-      "REQUIRES" : [ "rules", "commerce_product" ],
+      "REQUIRES" : [ "rules", "entity" ],
       "ON" : [ "commerce_product_insert" ],
       "DO" : [
         { "entity_create" : {
@@ -28,14 +28,14 @@ function commerce_product_catalog_default_rules_configuration() {
               "type" : "node",
               "param_type" : "product_display",
               "param_title" : "[product:title]",
-              "param_author" : [ "product:creator" ]
+              "param_author" : [ "commerce-product:creator" ]
             },
             "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
           }
         },
         { "data_set" : {
             "data" : [ "entity-created:field-commerce-ref" ],
-            "value" : [ "product" ]
+            "value" : [ "commerce-product" ]
           }
         }
       ]

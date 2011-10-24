@@ -5,7 +5,7 @@
  */
 
 /**
- * Implementation of hook_field_default_fields().
+ * Implements hook_field_default_fields().
  */
 function commerce_product_catalog_field_default_fields() {
   $fields = array();
@@ -45,7 +45,7 @@ function commerce_product_catalog_field_default_fields() {
             'calculation' => 'calculated_sell_price',
           ),
           'type' => 'commerce_price_formatted_amount',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -155,7 +155,7 @@ function commerce_product_catalog_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => 1,
+          'weight' => '1',
         ),
         'line_item' => array(
           'label' => 'above',
@@ -224,7 +224,7 @@ function commerce_product_catalog_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 3,
+          'weight' => '3',
         ),
         'line_item' => array(
           'label' => 'above',
@@ -297,11 +297,11 @@ function commerce_product_catalog_field_default_fields() {
           'label' => 'above',
           'module' => 'image',
           'settings' => array(
-            'image_link' => '',
-            'image_style' => '',
+            'image_link' => 'content',
+            'image_style' => 'medium',
           ),
           'type' => 'image',
-          'weight' => 2,
+          'weight' => '2',
         ),
         'line_item' => array(
           'label' => 'above',
@@ -379,11 +379,19 @@ function commerce_product_catalog_field_default_fields() {
           'label' => 'hidden',
           'module' => 'commerce_cart',
           'settings' => array(
+            'combine' => TRUE,
             'default_quantity' => 1,
+            'line_item_type' => 'product',
             'show_quantity' => FALSE,
           ),
           'type' => 'commerce_cart_add_to_cart_form',
           'weight' => '3',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
       ),
       'entity_type' => 'node',
@@ -391,6 +399,7 @@ function commerce_product_catalog_field_default_fields() {
       'label' => 'Ссылка на продукт',
       'required' => 1,
       'settings' => array(
+        'field_injection' => TRUE,
         'referenceable_types' => array(
           'catalog_product' => 0,
           'product' => 'product',

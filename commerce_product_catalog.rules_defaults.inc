@@ -27,7 +27,7 @@ function commerce_product_catalog_default_rules_configuration() {
             "USING" : {
               "type" : "node",
               "param_type" : "product_display",
-              "param_title" : "[product:title]",
+              "param_title" : "[commerce-product:title]",
               "param_author" : [ "commerce-product:creator" ]
             },
             "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }

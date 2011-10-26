@@ -45,7 +45,7 @@ function commerce_product_catalog_field_default_fields() {
             'calculation' => 'calculated_sell_price',
           ),
           'type' => 'commerce_price_formatted_amount',
-          'weight' => '0',
+          'weight' => '3',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -155,7 +155,7 @@ function commerce_product_catalog_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => '1',
+          'weight' => '4',
         ),
         'line_item' => array(
           'label' => 'above',
@@ -224,7 +224,7 @@ function commerce_product_catalog_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '3',
+          'weight' => '5',
         ),
         'line_item' => array(
           'label' => 'above',
@@ -298,10 +298,10 @@ function commerce_product_catalog_field_default_fields() {
           'module' => 'image',
           'settings' => array(
             'image_link' => 'content',
-            'image_style' => 'medium',
+            'image_style' => 'large',
           ),
           'type' => 'image',
-          'weight' => '2',
+          'weight' => '1',
         ),
         'line_item' => array(
           'label' => 'above',
